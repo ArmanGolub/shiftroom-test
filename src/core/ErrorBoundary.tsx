@@ -24,29 +24,29 @@ export class ErrorBoundary extends Component<Props, State> {
     if (!error) return this.props.children;
 
     return (
-      <div className="flex min-h-screen items-center bg-background text-foreground">
+      <div className="bg-background text-foreground flex min-h-screen items-center">
         <div className="mx-auto w-full max-w-xl px-4 py-16">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-destructive">
+          <p className="text-destructive text-xs tracking-[0.2em] uppercase">
             Error · Fatal
           </p>
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
+          <h1 className="mt-6 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
             Something broke.
           </h1>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="text-mutedForeground mt-4 text-sm">
             The app hit an unexpected error. Try reloading the page — if it
             happens again, the details below might help you track it down.
           </p>
 
-          <pre className="mt-6 overflow-auto rounded-md border bg-muted p-3 font-mono text-xs text-muted-foreground">
+          <pre className="bg-muted text-mutedForeground mt-6 overflow-auto rounded-md border p-3 text-xs">
             {error.message}
           </pre>
 
           {import.meta.env.DEV && error.stack && (
             <details className="mt-3">
-              <summary className="cursor-pointer font-mono text-xs text-muted-foreground hover:text-foreground">
+              <summary className="text-mutedForeground hover:text-foreground cursor-pointer text-xs">
                 Stack trace
               </summary>
-              <pre className="mt-2 overflow-auto rounded-md border bg-muted p-3 font-mono text-[11px] leading-relaxed text-muted-foreground">
+              <pre className="bg-muted text-mutedForeground mt-2 overflow-auto rounded-md border p-3 text-[11px] leading-relaxed">
                 {error.stack}
               </pre>
             </details>
@@ -56,14 +56,14 @@ export class ErrorBoundary extends Component<Props, State> {
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="inline-flex h-10 items-center rounded-md bg-primary px-4 font-mono text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              className="bg-primary text-primaryForeground hover:bg-primary/90 inline-flex h-10 items-center rounded-md px-4 text-sm font-medium"
             >
               Reload
             </button>
             <button
               type="button"
               onClick={this.reset}
-              className="inline-flex h-10 items-center rounded-md border px-4 font-mono text-sm font-medium text-muted-foreground hover:text-foreground"
+              className="text-mutedForeground hover:text-foreground inline-flex h-10 items-center rounded-md border px-4 text-sm font-medium"
             >
               Try again
             </button>

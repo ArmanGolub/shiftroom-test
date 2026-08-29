@@ -1,9 +1,9 @@
-# React Starter Kit
+# ShiftRoom
 
-A lean, opinionated **Vite + React 19 + TypeScript** template. Everything real apps need — routing, state, data, forms, i18n, theming, error handling — wired up and ready to ship.
+A **Vite + React 19 + TypeScript** app. Everything real apps need — routing, state, data, forms, i18n, theming, error handling — wired up and ready to ship.
 
 ```
-rsk /
+shiftroom /
 ```
 
 ---

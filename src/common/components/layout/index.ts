@@ -1,3 +1,4 @@
+export { AppLayout } from "./AppLayout";
 export { Footer } from "./Footer";
 export { Page } from "./Page";
 export { Section } from "./Section";

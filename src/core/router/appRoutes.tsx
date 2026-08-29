@@ -1,24 +1,28 @@
-import { ContactFormPage, HomePage } from "@/modules/dashboard";
-import { Outlet, type RouteObject } from "react-router-dom";
+import { AppLayout } from "@/common/components/layout";
+import { LeaveBalancesPage } from "@/modules/leave-balances";
+import { UnknownPage } from "@/modules/unknown";
+import { Navigate, type RouteObject } from "react-router-dom";
 
 export const appRoutes: RouteObject[] = [
   {
     path: "/",
-    element: (
-      <div className="flex min-h-screen flex-col">
-        <main>
-          <Outlet />
-        </main>
-      </div>
-    ),
+    element: <AppLayout />,
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <Navigate to="/leave-balances" replace />,
       },
       {
-        path: "contact",
-        element: <ContactFormPage />,
+        path: "leave-balances",
+        element: <LeaveBalancesPage />,
+      },
+      {
+        path: "unknown",
+        element: <UnknownPage />,
+      },
+      {
+        path: "*",
+        element: <Navigate to="/unknown" replace />,
       },
     ],
   },
