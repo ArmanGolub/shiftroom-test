@@ -18,8 +18,8 @@ import { RailLink } from "./RailLink";
 import { SearchButton } from "./SearchButton";
 
 const sunMask = {
-  maskImage: `url(${sunUrl})`,
-  WebkitMaskImage: `url(${sunUrl})`,
+  maskImage: `url("${sunUrl}")`,
+  WebkitMaskImage: `url("${sunUrl}")`,
   maskSize: "contain",
   WebkitMaskSize: "contain",
   maskRepeat: "no-repeat",
